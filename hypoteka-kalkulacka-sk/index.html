@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Hypotéka Kalkulačka 2026 — OmniTools 🇸🇰 Slovakia</title>
+<meta name="description" content="Hypotéka Kalkulačka 2026 — hypotéka výpočet splátky. Outil gratuit en ligne, mis à jour 2026.">
+<meta name="keywords" content="hypotéka výpočet splátky, 2026, gratuit, en ligne, calculateur">
+<link rel="canonical" href="https://Legion33shadow.github.io/omnitools-sk/hypoteka-kalkulacka-sk/">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-MISSING" crossorigin="anonymous"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:#0f0f1a;color:#e0e0ff;min-height:100vh}
+header{background:linear-gradient(135deg,#1a1a3e,#0f0f1a);padding:1.5rem 1rem;text-align:center;border-bottom:1px solid #1a5c3244}
+h1{font-size:clamp(1.2rem,4vw,1.7rem);color:#fff;margin-bottom:.3rem}
+.back{display:inline-block;color:#1a5c32;text-decoration:none;font-size:.85rem;margin-bottom:.5rem}
+.main{max-width:600px;margin:1.5rem auto;padding:0 1rem}
+.tool-box{background:#1a1a2e;border-radius:12px;padding:1.5rem;border:1px solid #1a5c3244}
+label{display:block;margin:.7rem 0 .3rem;font-size:.9rem;color:#aaa;font-weight:600}
+input[type=number],input[type=text],textarea{width:100%;padding:.7rem;background:#0f0f1a;border:1px solid #333;border-radius:8px;color:#e0e0ff;font-size:1rem}
+input[type=range]{width:100%;accent-color:#1a5c32;margin:.3rem 0}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem;margin-top:1rem}
+.stat{background:#0f0f1a;border-radius:8px;padding:.8rem;text-align:center;border:1px solid #2a2a5a}
+.stat small{display:block;font-size:.75rem;color:#888;margin-bottom:.3rem}
+.stat strong{font-size:1.2rem;color:#1a5c32}
+.ad-slot{max-width:600px;margin:.8rem auto;padding:0 1rem;text-align:center}
+footer{text-align:center;padding:2rem;color:#555;font-size:.8rem;margin-top:2rem}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../">← OmniTools 🇸🇰 Slovakia</a>
+  <h1>Hypotéka Kalkulačka 2026</h1>
+  <p style="color:#888;font-size:.85rem">hypotéka výpočet splátky · Mis à jour 2026</p>
+</header>
+<div class="ad-slot">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-MISSING" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<div class="main">
+
+<div class="tool-box">
+<label>Montant (€)</label>
+<input type="number" id="t1" value="100000" oninput="calc()">
+<label>Taux annuel (%) : <span id="t2v">3.5%</span></label>
+<input type="range" id="t2" min="0.5" max="20" step="0.1" value="3.5" oninput="calc()">
+<label>Durée (mois) : <span id="t3v">120</span></label>
+<input type="range" id="t3" min="12" max="360" step="12" value="120" oninput="calc()">
+<div class="results" id="res"></div>
+</div>
+</div>
+<div class="ad-slot">
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-MISSING" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+<footer>© 2026 Hypotéka Kalkulačka 2026 · OmniTools Slovakia</footer>
+<script>
+const fmt=n=>new Intl.NumberFormat('fr',{maximumFractionDigits:0}).format(n);
+function calc(){
+  const P=+document.getElementById('t1').value||0;
+  const r=+document.getElementById('t2').value/100/12;
+  const n=+document.getElementById('t3').value;
+  document.getElementById('t2v').textContent=(r*12*100).toFixed(1)+'%';
+  document.getElementById('t3v').textContent=n+' mois';
+  const emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  document.getElementById('res').innerHTML=`
+    <div class="stat"><small>Mensualité</small><strong>${fmt(emi)} €</strong></div>
+    <div class="stat"><small>Total remboursé</small><strong>${fmt(emi*n)} €</strong></div>
+    <div class="stat"><small>Intérêts totaux</small><strong>${fmt(emi*n-P)} €</strong></div>
+  `;
+}
+window.onload=calc;
+</script>
+</body>
+</html>
